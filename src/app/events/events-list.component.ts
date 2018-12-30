@@ -4,12 +4,19 @@ import { Component } from  '@angular/core'
     selector: 'events-list',
     template: `
     <div>
-     <h1>Upcoming Angular Events</h1>
+     <h2>Upcoming Angular Events</h2>
      <hr/>
-     <event-thumbnail (eventClick)="handleEventClicked($event)"
+     <div class="well">
+     <div>Hello World</div>
+     </div>
+     <event-thumbnail 
      [event]="event1"></event-thumbnail>
+     
     </div>
-    `
+    `,
+    styles: [`
+    .well div { color: red; }
+    `]
          
      
 })
@@ -17,7 +24,7 @@ import { Component } from  '@angular/core'
 export class EventsListComponent {
    event1 = {
        id: 1,
-       name: 'Angular mmetup',
+       name: 'Angular metup',
        date: '23/4/2018',
        price: 599.99,
        imageurl: '/assets/images/download(1).jpeg',
@@ -27,7 +34,5 @@ export class EventsListComponent {
            country: 'England'
        }
    }
-   handleEventClicked(data) {
-       console.log('received:', data)
-   }
+   
 }
